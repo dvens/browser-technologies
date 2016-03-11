@@ -70,6 +70,7 @@ Gulp will make an /build folder.
 
 ## Color
 * No problems at all :)
+
 ![first load](screenshots/gray-scale.png)
 
 ## No CSS
