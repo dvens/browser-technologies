@@ -65,6 +65,7 @@ Gulp will make an /build folder.
 * first paint: 668ms
 * domcontentloaded: 718ms
 * load event: 1.06s
+
 ![first load](screenshots/speedtest.png)
 
 ## Color
@@ -73,7 +74,9 @@ Gulp will make an /build folder.
 
 ## No CSS
 * Icons not shown without css
+
 ![first load](screenshots/css-uit.png)
+
 > Solution: Changed to inline svg
 
 ## No influence at all on my website
