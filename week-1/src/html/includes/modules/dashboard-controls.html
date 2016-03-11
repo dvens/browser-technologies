@@ -1,13 +1,13 @@
 <div class="dashboard__container">
 
 	<div class="dashboard__control--right">
-		<a title="next page" class="dashboard__slide-button" href="#">
+		<a aria-label="next page" class="dashboard__slide-button" href="#">
 			@@include('./src/assets/images/arrow.svg')
 		</a>
 	</div>
 
 	<div class="dashboard__control--left">
-		<a title="previous page" class="dashboard__slide-button--previous" href="#">
+		<a aria-label="previous page" class="dashboard__slide-button--previous" href="#">
 			@@include('./src/assets/images/arrow.svg')
 		</a>
 	</div>
@@ -16,19 +16,19 @@
 		
 		<ul>
 			<li>
-				<a title="favorite button" class="navigation__button--favorite">@@include('./src/assets/images/heart.svg')</a>
+				<a aria-label="favorite button" class="navigation__button--favorite">@@include('./src/assets/images/heart.svg')</a>
 			</li>
 			<li>
-				<a title="show images button" class="navigation__button--images" href="#">@@include('./src/assets/images/images.svg')</a>
+				<a aria-label="show images button" class="navigation__button--images" href="#">@@include('./src/assets/images/images.svg')</a>
 			</li>
 			<li>
-				<a title="show house info button" class="navigation__button--info" href="#">@@include('./src/assets/images/info.svg')</a>
+				<a aria-label="show house info button" class="navigation__button--info" href="#">@@include('./src/assets/images/info.svg')</a>
 			</li>
 			<li>
-				<a title="favorite overview button" class="navigation__button--list" href="#/favorites">@@include('./src/assets/images/list.svg')</a>
+				<a aria-label="favorite overview button" class="navigation__button--list" href="#/favorites">@@include('./src/assets/images/list.svg')</a>
 			</li>
 			<li>
-				<a title="fullscreen button" class="navigation__button--fullscreen" href="#">@@include('./src/assets/images/fullscreen.svg')</a>
+				<a aria-label="fullscreen button" class="navigation__button--fullscreen" href="#">@@include('./src/assets/images/fullscreen.svg')</a>
 			</li>
 		</ul>
 
@@ -108,7 +108,7 @@
 
 <template peach-template="photo-overview">
 	
-	<a class="dashboard__close-btn" href="#"><i class="material-icons">close</i></a>
+	<a aria-label="close button" class="dashboard__close-btn" href="#"><i class="material-icons">close</i></a>
 
 	<div class="photo__container">
 
