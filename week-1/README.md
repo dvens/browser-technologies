@@ -58,10 +58,10 @@ Gulp will make an /build folder.
 > Solution: Add an input field to let the user give his location
 
 ## Internet Access
-*throttling: regular 4g (4mb/s 20ms RTT)
-*first paint: 668ms
-*domcontentloaded: 718ms
-*load event: 1.06s
+* throttling: regular 4g (4mb/s 20ms RTT)
+* first paint: 668ms
+* domcontentloaded: 718ms
+* load event: 1.06s
 ![first load](screenshots/speedtest.png)
 
 ## Color
