@@ -52,9 +52,12 @@ Gulp will make an /build folder.
 ## No Javascript
 * Nothing is loading because the pages are rendered by Javascript
 ![first load](screenshots/javascript-disabled.png)
+
 > Solution: Server side html parsing (and page animation only with Javascript) or a no-script tag 
+
 * Geolocation not working
 ![first load](screenshots/javascript-disabled-solution.png)
+
 > Solution: Add an input field to let the user give his location
 
 ## Internet Access
