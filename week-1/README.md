@@ -1,4 +1,4 @@
-# LookLive server
+# Funda app
 
 ## Getting started
 
