@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Browser Technologies</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	
+	<main>
+		
+		<header>
+			<h1> Browser Technologies <span> - 1. 2. 3 Feature Detection </span></h1>
+			<nav>
+				<ul>
+					<li><a class="active" href="index.html">CSS</a></li>
+					<li><a href="html.html">HTML</a></li>
+					<li><a href="javascript.html">Javascript</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<article>
+			
+			<h2>CSS - Feature: Flexbox (Internet Explorer Fallback)</h2>
+			
+			<p>Flexbox is a new layout mode in CSS3. Flexbox provides an improvement over the block model in that it does not use floats. The <mark>fallback</mark> are html comments above the html tag.</p>
+
+			<h3>Can I Use?</h3>
+			
+			<ul>
+				<li><a href="http://caniuse.com/#feat=flexbox" target="_blank">Can I Use Flexbox?</a></li>
+				<li><a href="http://jonibologna.com/flexbox-cheatsheet/" target="_blank">Flexbox Cheatsheet</a></li>
+			</ul>
+			
+			<h3>Code & Fallback</h3>
+
+			<p> 
+				If display flex is not supported .flex class will fallback to <mark>display: block;</mark>.
+				
+				<code>
+
+					.flex {
+						<em>display: block;</em>
+						<em>display: flex;</em>
+						<em>flex-direction: row;</em>
+						<em>flex-wrap: wrap;</em>
+						<em>justify-content: space-between;</em>
+					}	
+					
+					<br>	
+					<br>
+
+					.flex-item {
+						<em>height: 100px;</em>
+						<em>background-color: white;</em>
+						<em>border: 2px solid cadetBlue;</em>
+						<em>flex-basis: 48%</em>
+					}
+				
+				</code>
+			</p>
+
+			<p>
+				Above your <mark>html tag</mark> use the following code that recognizes IE8 and IE9 <mark>without the single(') quotes</mark>
+				<code>
+					<'!--[if IE 8]'> <'html class="no-js lt-ie10 lt-ie9"> <'![endif]--'> <br>
+					<'!--[if IE 9]'><'html class="no-js lt-ie10"><'![endif]--'>
+				</code>
+			</p>
+
+			<p>
+				It will add the class lt-ie10 to the html tag so you can use the following code as fallback. Other tip is to use <mark>modernizr</mark>(it recognizes more browsers) as fallback, so you could use .no-flexbox as selector.
+				<code>
+					<i>// Fallback for ie8 & ie9</i> 
+					<br>
+					.lt-ie10 .flex-item {	
+						<em>float: left;</em>
+						<em>margin-right: 2%;</em>
+						<em>width: 48%</em>
+					}
+
+					<br>	
+					<br>
+
+					.lt-ie10 .flex-item.last {
+						<em>margin-right: 0;</em>
+					}
+				</code>
+			</p>
+
+			<h3>Demo</h3>
+
+			<div class="flex">
+				
+				<div class="flex-item"></div>
+				<div class="flex-item last"></div>
+
+			</div>
+
+			<hr>
+
+			<h2>CSS - Feature: Calc()</h2>
+
+			<p>The calc() function is used to calculate and set the outcome as value in a css-property.</p>
+
+			<h3>Can I Use?</h3>
+			<ul>
+				<li><a href="http://caniuse.com/#feat=calc" target="_blank">Can I Use Calc()</a></li>
+				<li><a href="https://css-tricks.com/a-couple-of-use-cases-for-calc/" target="_blank">Use Cases for Calc()</a></li>
+			</ul>
+
+			<h3>Code & Fallback</h3>
+			<p>If the browser does not support calc it will fallback on the width that is above the width property that uses calc().</p>
+			<p>
+				<code>
+					.calc {
+						<em>height: 20px;</em>
+						<em>background-color: white;</em>
+						<em>border:2px solid cadetBlue;</em>
+						<em>width: 500px;</em>
+						<em>width: calc(50% - 20px);</em>
+					}
+				</code>
+			</p>
+
+			<h3>Demo</h3>
+			<div class="calc"></div>
+
+		</article>
+
+	</main> <!-- end .container -->
+
+	<!-- load in javascript =) -->
+	<script src="js/script.js"></script>
+</body>
+
+</html>
