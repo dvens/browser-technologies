@@ -9,14 +9,15 @@ app.service('gApi', ['api', function(
 	var gApi = {};
 	var _gEndPoint = '&location_type=ROOFTOP&result_type=street_address&key=';
 
-	gApi.getLongLang = function(callback) {
+	gApi.getLongLang = function(callback, fallback) {
 
 		if(navigator.geolocation) {
 			
-			var _location = navigator.geolocation.getCurrentPosition(callback);
+			var _location = navigator.geolocation.getCurrentPosition(callback, fallback);
 
 		} else {
 
+			fallback();
 			console.log('Geolocation is not supported in this browser');
 
 		}

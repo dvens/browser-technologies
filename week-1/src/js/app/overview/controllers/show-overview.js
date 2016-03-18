@@ -13,6 +13,10 @@ app.controller('home', ['pageLoader', 'overview-service', 'gApi', 'filters' , fu
 	var overview = {};
 	var $rootscope = this;
 
+	var _geoForm = Ld('.geolocation');
+	var _geoSubmit = Ld('.geolocation__submit-btn');
+	var _geoInput = document.querySelector('.geolocation__search');
+
 	overview.init = function() {
 
 		pageLoader.toggleLoader('show');
@@ -26,6 +30,7 @@ app.controller('home', ['pageLoader', 'overview-service', 'gApi', 'filters' , fu
 
 		gapi.getLongLang(function(position){
 
+			// Callback
 			var _position = {
 				lat: position.coords.latitude,
 				lng: position.coords.longitude
@@ -33,6 +38,27 @@ app.controller('home', ['pageLoader', 'overview-service', 'gApi', 'filters' , fu
 
 			_this.getLocation(_position);
 
+		}, function(){
+			
+			// Fallback
+			_this.showForm();
+
+		});
+
+	}
+
+	overview.showForm = function() {
+
+		var _this = this;
+
+		_geoForm.addClass('is-active');
+
+		_geoSubmit.addListener('click', function(e){
+
+			_this.loadData(_geoInput.value, 'no-geo');
+			_geoForm.removeClass('is-active');
+
+			e.preventDefault();
 		});
 
 	}
@@ -52,10 +78,21 @@ app.controller('home', ['pageLoader', 'overview-service', 'gApi', 'filters' , fu
 
 	}
 
-	overview.loadData = function(res) {
+	overview.loadData = function(res, option) {
 
 		var _this = this;
-		var _postal = filters.getDutchPostal(res.formatted_address);
+		var _postal;
+
+		if(option === 'no-geo') {
+			
+			_postal = res;
+
+
+		} else {
+
+			_postal = filters.getDutchPostal(res.formatted_address);
+
+		}
 	
 		overviewService.getHouses('/' + _postal + '/+2km').then(function(response){
 

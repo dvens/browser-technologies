@@ -18,72 +18,94 @@ gulp server
 ```
 Gulp will make an /build folder.
 
-# Disabled Web Features
+# Core functionality of my Funda app
+* The core functionality of the app is Geolocation, it will show houses based on your current location.
+* The function of geolocation was fired immediately after the page was loading without checking if geolocation was supported. So I changed it to a input box (read below).
 
-## List of things that I have changed
-- Changed the main buttons to svg instead of css backgrounds.
-- Added fallback fonts for Open Sans, Source Sans Pro.
-- Added Aria-labels for text to speech.
-- Added focus on elements to tab through easily.
+## Feature: Geolocation 
+* The Geolocation on the funda app gets your coordinates and sends them to the google api to retrieve your postal and city. 
+* After this it sends the city and postal to the Funda Api to retrieve houses nearby.
 
-## Disabled images
-* Images are not shown when disabled, the concept of the app is running on a video background (still working).
-* Main buttons to navigate through the page are not shown.
+### Can I use?
+![first load](screenshots/nogeo.png)
 
-### Gallery no images 
-![first load](screenshots/gallery-no-images.png)
-> Solution: none the website is running on images (or alt text but it is useless).
+### Fallback
+* If the Geolocation is supported it will immediately make a API call and retrieve houses nearby.
+* The Funda app will show an input field where the user can type his city or postal if the Geolocation is blocked or not supported
+* Javascript uses a feature detection do determine if the geolocation is supported.
+* The navigator.geolocations takes an error fallback as second argument.
 
-### Main buttons not shown 
-![first load](screenshots/no-images-buttons.png)
-> Solution: changed the icons to inline svgs
+### Link to new funda app with fallback
+* [Link to new funda app](http://funda-fallback.dylanvens.com)
 
-## Custom fonts
-* Icon fonts do not work and swapped by text
-* Custom fonts like Open Sans are changed to serif.
+```javascript
+gApi.getLongLang = function(callback, error) {
+	
+	// If geolocation is true (supported)
+	if(navigator.geolocation) {
+		
+		// If geolocation is supported use the callback, if geolocation is blocked it will call the fallback
+		var _location = navigator.geolocation.getCurrentPosition(callback, fallback);
 
-### Icon fonts 
-![first load](screenshots/font-disabled-shows-text.png)
+	} else {
+		
+		// If geolocation is not supported show input field.
+		fallback();
+		console.log('Geolocation is not supported in this browser');
 
-### Custom fonts
-![first load](screenshots/disabled-font-shows-backup-font.png)
-> Solution: Added fallback fonts
+	}
 
-## No Javascript
-* Nothing is loading because the pages are rendered by Javascript
-![first load](screenshots/javascript-disabled.png)
+}
+```
 
-> Solution: Server side html parsing (and page animation only with Javascript) or a no-script tag 
+```javascript
+overview.getLongLang = function() {
 
-* Geolocation not working
-![first load](screenshots/javascript-disabled-solution.png)
+	var _this = this;
 
-> Solution: Add an input field to let the user give his location
+	gapi.getLongLang(function(position){
 
-## Internet Access
-* throttling: regular 4g (4mb/s 20ms RTT)
-* first paint: 668ms
-* domcontentloaded: 718ms
-* load event: 1.06s
+		// Callback if geolocation is supported
+		var _position = {
+			lat: position.coords.latitude,
+			lng: position.coords.longitude
+		};
 
-![first load](screenshots/speedtest.png)
+		_this.getLocation(_position);
 
-## Color
-* No problems at all :)
+	}, function(){
+		
+		// Fallback if geolocation is blocked or not supported
+		_this.showForm();
 
-![first load](screenshots/gray-scale.png)
+	});
 
-## No CSS
-* Icons not shown without css
+}
+```
 
-![first load](screenshots/css-uit.png)
+```javascript
+var _geoForm = Ld('.geolocation');
+var _geoSubmit = Ld('.geolocation__submit-btn');
+var _geoInput = document.querySelector('.geolocation__search');
 
-> Solution: Changed to inline svg
+overview.showForm = function() {
 
-## No influence at all on my website
-* Javascript Wifi Hotspots
-* Javascript content blockers
-* Localstorage
-* CDN's
-* Ad Blockers
-* Cookies
+	var _this = this;
+
+	_geoForm.addClass('is-active');
+
+	_geoSubmit.addListener('click', function(e){
+
+		_this.loadData(_geoInput.value, 'no-geo');
+		_geoForm.removeClass('is-active');
+
+		e.preventDefault();
+	});
+
+}
+```
+
+## Fallback Mobile and Desktop
+![first load](screenshots/fallback.png)
+
+![first load](screenshots/fallbackmob.png)
