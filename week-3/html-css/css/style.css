@@ -1,0 +1,164 @@
+/*********************
+*** Global styling *** 
+*********************/
+
+* {
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+	background-color: #f0efe9;
+	font: 100%/1.4 'Verdana', Arial, sans-serif;	
+	color: #3e434f;
+}
+
+main, 
+section,
+header {
+	display: block;
+}
+
+main {
+	width: 90%;
+	max-width: 90%;
+	margin: 0 auto;
+	padding: 1.2em;
+}
+
+ul {
+	list-style: none;
+	margin-bottom: 1.5em;
+}
+
+/*********************
+*** Font styling ***** 
+*********************/
+
+h1 {
+	font-size: 1.5em;
+}
+
+h2 {
+	color: #fc728c;
+	margin-bottom: 1em;
+}
+
+h3 {
+	color: #616473;
+	margin-bottom: 0.8em;
+}
+
+/*********************
+*** Form styling ***** 
+*********************/
+
+label {
+	background-color: #eef1f7;
+	display: block;
+	position: relative;
+	width: 16em;
+	max-width: 16em;
+	padding: 1em;
+	margin-bottom: 0.8em;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	position: absolute;
+	top: 1.8em;
+	right: 1em;
+}
+
+button {
+	background-color: #f43254;
+	cursor: pointer;
+	font-size: 1em;
+	padding: 1em;
+	color: white;
+	border: none;
+	transition: background-color .2s ease-in;
+}
+	
+	button:hover {
+		background-color: #fc728c;
+
+	}
+
+/*********************
+*** Header styling *** 
+*********************/
+
+.main-header {
+	padding: 1em;
+	text-align: center;
+	background-color: #f43254;
+	margin-bottom: 1.2em;
+}
+
+	.main-header h1 {
+		color: white;
+	}
+
+/*********************
+*** List styling *** 
+*********************/
+
+.ingredients,
+.shopping-list {
+	padding: 1.5em;
+	margin-bottom: 1em;
+	width: 100%;
+	background-color: white;
+}
+
+	.shopping-list li {
+		position: relative;
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+		border-bottom: 1px solid #bdbdbd;
+	}
+
+	.shopping-list button {
+		padding: 0.3em 0.5em;
+		right: 0;
+		position: absolute;
+	}
+
+@media (min-width: 45em) { 
+	
+	.ingredients {
+		margin-right: 4%;
+	}
+
+	.ingredients,
+	.shopping-list {
+		width: 48%;
+		float: left;
+	}
+
+}
+
+@media (min-width: 60em) { 
+	
+	.ingredients {
+		margin-right: 4%;
+	}
+
+	.ingredients {
+		width: 38%;
+	}
+
+	.shopping-list {
+		width: 58%;
+		float: left;
+	}
+	
+}
+
+@media (min-width: 65em) { 
+
+}
