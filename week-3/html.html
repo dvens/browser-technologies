@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Browser Technologies</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	
+	<main>
+		
+		<header>
+			<h1> Browser Technologies <span> - 1. 2. 3 Feature Detection </span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html">CSS</a></li>
+					<li><a class="active" href="html.html">HTML</a></li>
+					<li><a href="javascript.html">Javascript</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<article>
+			
+			<h2>HTML - Feature: Picture element</h2>
+			
+			<p>The picture element contains multiple source elements that will determine on which browser size an specific image will be shown. If the picture element is not supported, the <mark>fallback</mark> will be the defined img tag.</p>
+
+			<h3>Can I Use?</h3>
+			
+			<ul>
+				<li><a href="http://caniuse.com/#feat=picture" target="_blank">Can I Use picture element?</a></li>
+			</ul>
+			
+			<h3>Code & Fallback</h3>
+
+			<p>
+				<code>
+					&lt;picture&gt;
+					    <em>&lt;source media="(max-width: 580px)" srcset="img/header-580.jpg"&gt;</em>
+					    <em>&lt;source media="(max-width: 880px)" srcset="img/header-880.jpg"&gt;</em>
+					    <em>&lt;source media="(max-width: 1000px)" srcset="img/header.jpg"&gt;</em>
+					    <em>&lt;img src="img/header.jpg" alt="House of cards"&gt;</em>
+					&lt;/picture&gt;
+				</code>
+			</p>
+
+			<h3>Demo</h3>
+
+			<picture>
+			    <source media="(max-width: 580px)" srcset="img/header-580.jpg">
+			    <source media="(max-width: 880px)" srcset="img/header-880.jpg">
+			    	<source media="(max-width: 1000px)" srcset="img/header.jpg">
+			    <img src="img/header.jpg" alt="House of cards">
+			</picture>
+
+			<hr>
+
+			<h2>HTML - Feature: input[type=data]</h2>
+
+			<p>The geolocation API allows the user to provide their location to web applications. It will ask the user to allow their browsers to access the location with a popup box.</p>
+
+			<h3>Can I Use?</h3>
+			
+			<ul>
+				<li><a href="http://caniuse.com/#feat=input-datetime" target="_blank">Can I Use input type date?</a></li>
+			</ul>
+			
+			<h3>Code & Fallback</h3>
+
+			<p>
+				If the input type is not supported it will fallback to type text and it will show the placeholder value as fallback.
+				<code>  
+					&lt;input type="date" placeholder="dd-mm-yyyy"&gt;
+				</code>
+			</p>
+
+			<h3>Demo</h3>
+			<input type="date" placeholder="dd-mm-yyyy">
+		</article>
+
+	</main> <!-- end .container -->
+
+	<!-- load in javascript =) -->
+	<script src="js/script.js"></script>
+</body>
+
+</html>
