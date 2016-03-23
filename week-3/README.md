@@ -25,12 +25,12 @@ document.createElement('main');
 
 > The elements get a width of 100% if the Media Queries are not supported (see screenshot taken in IE8!! below).
 
-[alt text](screenshots/without-javascript-ie.png)
-[alt text](screenshots/without-javascript-ie-2.png)
+![alt text](screenshots/without-javascript-ie.png)
+![alt text](screenshots/without-javascript-ie-2.png)
 
 > With Media Queries
 
-[alt text](screenshots/without-javascript.png)
+![alt text](screenshots/without-javascript.png)
 
 ### Step 3: Added PHP
 * I used PHP for the basic functionality to work (adding groceries to your list).
@@ -39,7 +39,7 @@ document.createElement('main');
 * The user can delete an item with the X button.
 * Link to third step [Link third step](http://bt.dylanvens.com/html-css-php/)
 
-[alt text](screenshots/without-javascript-2.png)
+![alt text](screenshots/without-javascript-2.png)
 
 ### Step 4: Javascript - Browser technology Drag & Drop
 * Drag & Drop is not supported in the following browsers [Can I Use Drag & Drop](http://caniuse.com/#feat=dragndrop)
@@ -71,14 +71,14 @@ if('draggable' in document.createElement('span') && !browser.isMobile())
 
 > Drag and drop supported
 
-[alt text](screenshots/drag-and-drop.png)
+![alt text](screenshots/drag-and-drop.png)
 
 ### Javascript - Mobile Page transition.
 * The body gets an is-mobile class if the device is a phone. 
 * The user can swap between two pages instead of scrolling down all the time.
 
-[alt text](screenshots/mobile.png)
-[alt text](screenshots/mobile-2.png)
+![alt text](screenshots/mobile.png)
+![alt text](screenshots/mobile-2.png)
 
 # Accessibility issues
 
@@ -96,15 +96,15 @@ if('draggable' in document.createElement('span') && !browser.isMobile())
 * Load Event: 1.28s
 * Pretty fast on a regular 2g 
 
-[alt text](screenshots/internet.png)
+![alt text](screenshots/internet.png)
 
 ### Mouse and Trackpad disabled
 * The user can simply add/delte items with his keyboard by using tab. The buttons are highlighted when the buttons is active. 
 * Even when the drag & drop is active the user can add the items. 
 
-[alt text](screenshots/tab.png)
-[alt text](screenshots/tab-2.png)
-[alt text](screenshots/tab-3.png)
+![alt text](screenshots/tab.png)
+![alt text](screenshots/tab-2.png)
+![alt text](screenshots/tab-3.png)
 
 ### Javascript Disabeld
 * The app still works when Javascript is Disabled because it is build on PHP. 
