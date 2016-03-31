@@ -34,7 +34,7 @@ document.createElement('main');
 
 ### Step 3: Added PHP
 * I used PHP for the basic functionality to work (adding groceries to your list).
-* The groceries are saved in the browsers cookie.
+* The groceries are saved in the browsers session.
 * The user can select the ingredients with input field and can add them with a button to the list. 
 * The user can delete an item with the X button.
 * Link to third step [Link third step](http://bt.dylanvens.com/html-css-php/)
