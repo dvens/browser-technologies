@@ -183,7 +183,6 @@ nav {
 .is-mobile main {
 	height: 100%;
 	overflow-x: hidden;
-	-webkit-backface-visibility: hidden;
 }
 
 .is-mobile main > section {

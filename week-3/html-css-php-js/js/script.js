@@ -5,9 +5,7 @@
 	var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 	var body = document.querySelector('body');
 	var main = document.querySelector('main');
-	var navButtons = [].slice.call(document.querySelectorAll('nav a'));
 	var currentPage = document.querySelector('nav .is-active');
-	var ingredients = [].slice.call(document.querySelectorAll('.ingredients__items li'));
 	var dropper = document.querySelector('.shopping-list__drop');
 	var dropTarget = document.querySelector('.shopping-list__drop-holder');
 
@@ -41,14 +39,18 @@
 				
 		}
 
-		if('draggable' in document.createElement('span') && !browser.isMobile()) {
-		 	
-			this.setDraggable();
-			this.setDropper();
+		if('classList' in document.documentElement) {	
+
+			this.initEvents();
+
+			if('draggable' in document.createElement('span') && !browser.isMobile()) {
+			 	
+				this.setDraggable();
+				this.setDropper();
+
+			}
 
 		}
-		
-		this.initEvents();
 
 	}
 
@@ -61,6 +63,8 @@
 	app.initEvents = function() {
 
 		var _this = this;
+		var navButtons = [].slice.call(document.querySelectorAll('nav a'));
+		var ingredients = [].slice.call(document.querySelectorAll('.ingredients__items li'));
 
 		navButtons.forEach(function(button) {
 
@@ -75,8 +79,6 @@
 			});
 
 		});
-
-
 
 	}
 

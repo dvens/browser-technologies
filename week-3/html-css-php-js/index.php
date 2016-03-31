@@ -15,7 +15,6 @@
 		
 		<?php include("includes/modules/ingredients.php"); ?>
 		<?php include("includes/modules/shopping-list.php"); ?>
-		<div class="cf"></div>
 
 	</main> <!-- end main -->
 

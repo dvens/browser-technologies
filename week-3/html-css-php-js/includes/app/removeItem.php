@@ -7,7 +7,7 @@
 	if( isset($_POST['deleteBread']) ) {
 
 		$_SESSION['breadCurrent'] = '';
-		header('location: /boodschappenlijst/');
+		header('location: /html-css-php-js/');
 
 	}
 
@@ -17,7 +17,7 @@
 		$diff = array_diff($array, array($_POST['id']));
 		$_SESSION['toppingsCurrent'] = $diff;
 
-		header('location: /boodschappenlijst/');
+		header('location: /html-css-php-js/');
 
 	}
 
@@ -27,7 +27,7 @@
 		$diff = array_diff($array, array($_POST['id']));
 		$_SESSION['saucesCurrent'] = $diff;
 
-		header('location: /boodschappenlijst/');
+		header('location: /html-css-php-js/');
 
 	}
 

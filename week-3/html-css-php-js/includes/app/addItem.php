@@ -5,6 +5,6 @@
 	$_SESSION['toppingsCurrent'] = isset($_POST['topping']) ? $_POST['topping'] : array();
 	$_SESSION['saucesCurrent'] = isset($_POST['sauce']) ? $_POST['sauce'] : array();
 
-	header('location: /boodschappenlijst/');
+	header('location: /html-css-php-js/');
 
 ?>

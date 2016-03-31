@@ -1,6 +1,6 @@
 <section class="ingredients">
 
-	<form class="ingredients__form" action="/boodschappenlijst/includes/app/addItem.php" method="POST">
+	<form class="ingredients__form" action="includes/app/addItem.php" method="POST">
 	
 		<h2>Kies je ingrediënten</h2>
 
