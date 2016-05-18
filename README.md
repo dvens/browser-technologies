@@ -6,3 +6,6 @@ Link to the repo [Link to week 2 repo](https://github.com/dvens/browser-technolo
 
 #Browser Technologies - week 3
 Link to the repo [Link to week 3 repo](https://github.com/dvens/browser-technologies/tree/master/week-3)
+
+#Browser Technologies - solved issues
+Link to the repo [Link to issues repo](https://github.com/dvens/browser-technologies/tree/solvedissues)
